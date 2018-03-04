@@ -2,6 +2,19 @@
 #include <stdio.h>
 #include <string.h>
 
+int increasing(int * A, int N){
+  
+    if(N==0 ||N==1){
+        return 1;
+    }
+    else if(A[N-1]<=A[N]){
+    return increasing(A,N-1);
+    }
+    else { 
+        printf("N= %d",N);
+        return 0;
+    }   
+}
 
 char* concat(const char *s1, const char *s2, const char *s3, const char *s4)
 {
@@ -94,7 +107,26 @@ signed main() {
     
     char str[100] = "";
     char out[100] = "";
-    int low=0;
+        int low=0;
+	int a[100],size=0,check;
+	
+	printf("Here is Task1: Increasing Order");
+	while(size!=-1){        
+		printf("\nEnter array size ");
+		scanf("%d",&size);
+		for(int i=0;i<size;i++){
+// 			printf("Enter the array element %d : ",(i+1));
+			scanf("%d",&a[i]);
+		}
+// 		printf("the array elements are:");
+// 		for(int i=0;i<size;i++){
+// 			printf("%d  ",a[i]);
+// 		}
+		check=increasing(a,size-1);
+		printf("%d\n",check);
+                                        
+    }
+
 	
     while(1){
         printf("Enter a string\n");
