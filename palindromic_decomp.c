@@ -33,9 +33,6 @@ char* subString (const char* input, int offset, int len, char* dest)
     char test[100] = "";
   int input_len = strlen (input);
 
-   // printf("isPalindrome String is: <--%s--> \n" , str);
-    //   printf("Before Substring : %s, offset: %d, len: %d \n" , input, offset, len);
-
   if (offset + len > input_len)
   {
      return NULL;
@@ -43,34 +40,19 @@ char* subString (const char* input, int offset, int len, char* dest)
 
   strncpy (test, input + offset, len);
   strcpy(dest,test);
-  
-// //   dest = "";
-//   for(x=0;x<len;x++){
-//       test[x] = dest[x];
-//   }
-//   test[len] = '\0';
-//   printf("after Substring: %s , len:%d, element:%c , newString:%s \n" , dest, strlen(dest),dest[len-1], test);
-  
-  
+
   return dest;
 }
 
 int checkPalindromeOfString(char str[], int low, int high)
 {
-    // printf("checkPalindromeOfString String is: <--%s--> \n" , str);
-    
-    // printf("lol first = %c, second= %c \n", str[low], str[h]);
-    
+
     while (high > low)
     {   
-		//printf("low=%d, h=%d, \n", low,h);
         if (str[low++] != str[high--])
         {
-            // printf("low=%d, h=%d, \n", low,h);
-            // printf("first = %c, second= %c \n", str[low], str[h]);
             return 0;
         }
-        // printf("first = %c, second= %c \n", str[low], str[h]);
     }
     return 1;
 }
@@ -80,7 +62,6 @@ void PalindromicDecomposition(char* str,char* out,int low,int n)
 {
     char *change;
     char sub[100];
-    // char *subchange = "";
     if(low==n)
     {
         printf("%s\n",out);
@@ -90,15 +71,9 @@ void PalindromicDecomposition(char* str,char* out,int low,int n)
     {
         if(checkPalindromeOfString(str,low,i))
         {
-				//out+" "+str.substr(low,i-low+1)
-
-//             printf("Current String: %s == OutPut String: %s == Going String: %s \n", str,out,change);
             change = subString (str, low, i-low+1, sub);
 			change = concat(out, " ", change, ",");
-            // printf("OutPut String: %s !!!! Sub String: %s \n",out,change);
-
             PalindromicDecomposition(str,change,i+1,n);
-            // free(change);
         }
     }
 }
@@ -116,13 +91,8 @@ signed main() {
 		printf("\nEnter array size ");
 		scanf("%d",&size);
 		for(int i=0;i<size;i++){
-// 			printf("Enter the array element %d : ",(i+1));
 			scanf("%d",&a[i]);
 		}
-// 		printf("the array elements are:");
-// 		for(int i=0;i<size;i++){
-// 			printf("%d  ",a[i]);
-// 		}
 		check=increasing(a,size-1);
 		printf("%d\n",check);
                                         
@@ -132,8 +102,6 @@ signed main() {
     while(1){
         printf("Enter a string\n");
         gets(str);
-        
-        // printf("Value1: %d, Value2: %d",str[0], str[1] );
         
         if((int)str[0]== 45 && (int)str[1]== 49 ){
             printf("Thank You!");
