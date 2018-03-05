@@ -13,7 +13,8 @@ int increasing(int * A, int N){
     else { 
         printf("N= %d",N);
         return 0;
-    }   
+    }
+    
 }
 
 char* concat(const char *s1, const char *s2, const char *s3, const char *s4)
@@ -107,7 +108,7 @@ signed main() {
     
     char str[100] = "";
     char out[100] = "";
-        int low=0;
+    int low=0;
 	int a[100],size=0,check;
 	
 	printf("Here is Task1: Increasing Order");
@@ -126,8 +127,8 @@ signed main() {
 		printf("%d\n",check);
                                         
     }
-
-	
+    
+	printf("Here is Task3: Palindromic Decomposition");
     while(1){
         printf("Enter a string\n");
         gets(str);
